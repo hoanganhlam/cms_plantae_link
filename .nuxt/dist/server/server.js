@@ -1392,7 +1392,7 @@ if (false) {}
 
 
 
-const _1ce23f6a = () => interopDefault(__webpack_require__.e(/* import() | pages/_flag/_entity */ 1).then(__webpack_require__.bind(null, 25))); // TODO: remove in Nuxt 3
+const _1ce23f6a = () => interopDefault(__webpack_require__.e(/* import() | pages/_flag/_entity */ 1).then(__webpack_require__.bind(null, 27))); // TODO: remove in Nuxt 3
 
 
 const emptyFn = () => {};

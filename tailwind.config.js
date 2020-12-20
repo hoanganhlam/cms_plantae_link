@@ -17,6 +17,9 @@ module.exports = {
             // TypeScript
             'plugins/**/*.ts',
             'nuxt.config.ts'
-        ]
+        ],
+        options: {
+            safelist: ['ml-8', 'ml-16', 'ml-24', 'ml-32'],
+        }
     }
 }

@@ -3,7 +3,7 @@
         <div class="mb-4 bg-gray-100 border-b py-2">
             <div class="container mx-auto flex items-center">
                 <n-link to="/" class="flex mx-auto">
-                    <img class="w-6 mr-2" src="/logo.svg" alt="Plant Genealogy">
+                    <img class="w-6 h-6 mr-2" src="/logo.svg" alt="Plant Genealogy">
                     <span class="font-bold text-xl">Plantae.Link</span>
                 </n-link>
             </div>
@@ -188,5 +188,17 @@ export default {
 </script>
 
 <style lang="scss">
+.ml-16 {
+    margin-left: 4rem;
+}
+.ml-24 {
+    margin-left: 6rem;
+}
+.ml-32 {
+    margin-left: 8rem;
+}
 
+.ml-40 {
+    margin-left: 10rem;
+}
 </style>
