@@ -47,5 +47,30 @@ export default {
     content: {},
 
     // Build Configuration (https://go.nuxtjs.dev/config-build)
-    build: {}
+    build: {
+        extractCSS: process.env.NODE_ENV === 'production',
+        postcss: {
+            // Add plugin names as key and arguments as value
+            // Install them before as dependencies with npm or yarn
+            plugins: {
+                tailwindcss: {},
+                autoprefixer: {}
+            },
+            preset: {
+                // Change the postcss-preset-env settings
+            }
+        },
+        optimization: {
+            splitChunks: {
+                cacheGroups: {
+                    styles: {
+                        name: 'styles',
+                        test: /\.(css|vue)$/,
+                        chunks: 'all',
+                        enforce: true
+                    }
+                }
+            }
+        },
+    }
 }

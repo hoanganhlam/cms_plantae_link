@@ -1,0 +1,11 @@
+{
+  "entry": "server.js",
+  "files": {
+    "pages/_flag/_entity.js": "pages/_flag/_entity.js",
+    "server.js": "server.js"
+  },
+  "maps": {
+    "pages/_flag/_entity.js": "pages/_flag/_entity.js.map",
+    "server.js": "server.js.map"
+  }
+}
