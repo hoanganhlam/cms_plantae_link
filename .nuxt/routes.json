@@ -3,6 +3,7 @@
     "name": "flag-entity",
     "path": "/:flag?/:entity?",
     "component": "/Users/apple/Desktop/OpenSource/cms_plantgenealogy/pages/_flag/_entity.vue",
-    "chunkName": "pages/_flag/_entity"
+    "chunkName": "pages/_flag/_entity",
+    "_name": "_1ce23f6a"
   }
 ]
