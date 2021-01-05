@@ -1,14 +1,14 @@
 <template>
     <div>
-        <div class="mb-4 bg-gray-100 border-b py-2">
+        <header class="py-2">
             <div class="container mx-auto flex items-center">
                 <n-link to="/" class="flex mx-auto">
                     <img class="w-6 h-6 mr-2" src="/logo.svg" alt="Plant Genealogy">
                     <span class="font-bold text-xl">Plantae.Link</span>
                 </n-link>
             </div>
-        </div>
-        <div class="container md:w-2/5 mx-auto p-4">
+        </header>
+        <main class="container md:w-2/5 mx-auto p-4">
             <div class="mb-2 border p-4 flex items-center" v-if="entity">
                 <div class="w-32 mr-4">
                     <img class="rounded" v-if="entity.media" :src="entity.media.sizes['thumb_247_247']" alt="">
@@ -35,7 +35,24 @@
                 <h4 class="mb-2 text-sm font-bold text-green-700">{{ schema }}</h4>
                 <entity v-for="(e, i) in child.filter(x => x.taxonomy === schema)" :key="e.id" :entity="e"/>
             </div>
-        </div>
+        </main>
+        <footer class="container md:w-2/5 p-4 mx-auto">
+            <div class="items-center flex">
+                <div class="text-sm"><p>plantae.link © 2021</p></div>
+                <div class="flex ml-auto">
+                    <a target="_blank" href="https://plantae.link/sitemap_index.xml" class="cursor-pointer p-2">
+                        <span class="stroke-current">
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="true">
+                                <path
+                                    d="M3,3H9V7H3V3M15,10H21V14H15V10M15,17H21V21H15V17M13,13H7V18H13V20H7L5,20V9H7V11H13V13Z"
+                                    stroke-width="0" stroke-linecap="round" stroke-linejoin="round">
+                                </path>
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </footer>
     </div>
 </template>
 
@@ -150,7 +167,7 @@ export default {
                 p: {
                     related_taxonomy: flag,
                     related_term: entity,
-                    page_size: 20,
+                    page_size: 500,
                     reverse: false
                 },
                 s: ["results"],
@@ -188,6 +205,10 @@ export default {
 </script>
 
 <style lang="scss">
+main.container {
+    min-height: calc(100vh - 100px);
+}
+
 .ml-16 {
     margin-left: 4rem;
 }

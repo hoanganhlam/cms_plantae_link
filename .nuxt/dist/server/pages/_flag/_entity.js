@@ -156,12 +156,12 @@ __webpack_require__.r(__webpack_exports__);
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/_flag/_entity.vue?vue&type=template&id=fd158d0a&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_vm._ssrNode("<div class=\"mb-4 bg-gray-100 border-b py-2\">","</div>",[_vm._ssrNode("<div class=\"container mx-auto flex items-center\">","</div>",[_c('n-link',{staticClass:"flex mx-auto",attrs:{"to":"/"}},[_c('img',{staticClass:"w-6 h-6 mr-2",attrs:{"src":"/logo.svg","alt":"Plant Genealogy"}}),_vm._v(" "),_c('span',{staticClass:"font-bold text-xl"},[_vm._v("Plantae.Link")])])],1)]),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"container md:w-2/5 mx-auto p-4\">","</div>",[_vm._ssrNode(((_vm.entity)?("<div class=\"mb-2 border p-4 flex items-center\"><div class=\"w-32 mr-4\">"+((_vm.entity.media)?("<img"+(_vm._ssrAttr("src",_vm.entity.media.sizes['thumb_247_247']))+" alt class=\"rounded\">"):("<img src=\"/plant.svg\" alt>"))+"</div> "+((_vm.entity.term)?("<div class=\"flex-1\"><h1 class=\"text-2xl font-bold\">"+_vm._ssrEscape(_vm._s(_vm.entity.term.title))+"</h1> <p class=\"text-gray-600 text-sm\">"+_vm._ssrEscape(_vm._s(_vm.entity.description))+"</p></div>"):"<!---->")+"</div>"):("<div class=\"mb-2\"><label><input type=\"text\" placeholder=\"Search species\""+(_vm._ssrAttr("value",(_vm.search)))+" class=\"border p-2 px-4 w-full\"></label></div>"))+" "),_vm._ssrNode("<div class=\"mb-2 border p-4 bg-yellow-100\">","</div>",[_vm._ssrNode("<h4 class=\"mb-2 text-sm font-bold text-green-700\">"+_vm._ssrEscape(_vm._s(_vm.entity ? 'Genealogy' : 'Species'))+"</h4> "),_vm._l((_vm.flat_entities),function(e,i){return _c('entity',{key:e.id,class:_vm.entity ? ("ml-" + (8 * i)) : undefined,attrs:{"entity":e}})})],2),_vm._ssrNode(" "),_vm._l((_vm.schemas.slice(_vm.next_flag, 6)),function(schema){return _vm._ssrNode("<div class=\"mb-2 border p-4\">","</div>",[_vm._ssrNode("<h4 class=\"mb-2 text-sm font-bold text-green-700\">"+_vm._ssrEscape(_vm._s(schema))+"</h4> "),_vm._l((_vm.child.filter(function (x) { return x.taxonomy === schema; })),function(e,i){return _c('entity',{key:e.id,attrs:{"entity":e}})})],2)})],2)],2)}
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/_flag/_entity.vue?vue&type=template&id=0707ba45&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_vm._ssrNode("<header class=\"py-2\">","</header>",[_vm._ssrNode("<div class=\"container mx-auto flex items-center\">","</div>",[_c('n-link',{staticClass:"flex mx-auto",attrs:{"to":"/"}},[_c('img',{staticClass:"w-6 h-6 mr-2",attrs:{"src":"/logo.svg","alt":"Plant Genealogy"}}),_vm._v(" "),_c('span',{staticClass:"font-bold text-xl"},[_vm._v("Plantae.Link")])])],1)]),_vm._ssrNode(" "),_vm._ssrNode("<main class=\"container md:w-2/5 mx-auto p-4\">","</main>",[_vm._ssrNode(((_vm.entity)?("<div class=\"mb-2 border p-4 flex items-center\"><div class=\"w-32 mr-4\">"+((_vm.entity.media)?("<img"+(_vm._ssrAttr("src",_vm.entity.media.sizes['thumb_247_247']))+" alt class=\"rounded\">"):("<img src=\"/plant.svg\" alt>"))+"</div> "+((_vm.entity.term)?("<div class=\"flex-1\"><h1 class=\"text-2xl font-bold\">"+_vm._ssrEscape(_vm._s(_vm.entity.term.title))+"</h1> <p class=\"text-gray-600 text-sm\">"+_vm._ssrEscape(_vm._s(_vm.entity.description))+"</p></div>"):"<!---->")+"</div>"):("<div class=\"mb-2\"><label><input type=\"text\" placeholder=\"Search species\""+(_vm._ssrAttr("value",(_vm.search)))+" class=\"border p-2 px-4 w-full\"></label></div>"))+" "),_vm._ssrNode("<div class=\"mb-2 border p-4 bg-yellow-100\">","</div>",[_vm._ssrNode("<h4 class=\"mb-2 text-sm font-bold text-green-700\">"+_vm._ssrEscape(_vm._s(_vm.entity ? 'Genealogy' : 'Species'))+"</h4> "),_vm._l((_vm.flat_entities),function(e,i){return _c('entity',{key:e.id,class:_vm.entity ? ("ml-" + (8 * i)) : undefined,attrs:{"entity":e}})})],2),_vm._ssrNode(" "),_vm._l((_vm.schemas.slice(_vm.next_flag, 6)),function(schema){return _vm._ssrNode("<div class=\"mb-2 border p-4\">","</div>",[_vm._ssrNode("<h4 class=\"mb-2 text-sm font-bold text-green-700\">"+_vm._ssrEscape(_vm._s(schema))+"</h4> "),_vm._l((_vm.child.filter(function (x) { return x.taxonomy === schema; })),function(e,i){return _c('entity',{key:e.id,attrs:{"entity":e}})})],2)})],2),_vm._ssrNode(" <footer class=\"container md:w-2/5 p-4 mx-auto\"><div class=\"items-center flex\"><div class=\"text-sm\"><p>plantae.link © 2021</p></div> <div class=\"flex ml-auto\"><a target=\"_blank\" href=\"https://plantae.link/sitemap_index.xml\" class=\"cursor-pointer p-2\"><span class=\"stroke-current\"><svg viewBox=\"0 0 24 24\" fill=\"true\" class=\"w-4 h-4\"><path d=\"M3,3H9V7H3V3M15,10H21V14H15V10M15,17H21V21H15V17M13,13H7V18H13V20H7L5,20V9H7V11H13V13Z\" stroke-width=\"0\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg></span></a></div></div></footer>")],2)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./pages/_flag/_entity.vue?vue&type=template&id=fd158d0a&
+// CONCATENATED MODULE: ./pages/_flag/_entity.vue?vue&type=template&id=0707ba45&
 
 // EXTERNAL MODULE: ./components/Entity.vue + 4 modules
 var Entity = __webpack_require__(24);
@@ -170,6 +170,23 @@ var Entity = __webpack_require__(24);
 var external_lodash_ = __webpack_require__(23);
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/_flag/_entity.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -324,7 +341,7 @@ var external_lodash_ = __webpack_require__(23);
       p: {
         related_taxonomy: flag,
         related_term: entity,
-        page_size: 20,
+        page_size: 500,
         reverse: false
       },
       s: ["results"],

@@ -1915,12 +1915,12 @@ var tailwind = __webpack_require__(19);
 // EXTERNAL MODULE: ./node_modules/prismjs/themes/prism.css
 var prism = __webpack_require__(20);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./layouts/default.vue?vue&type=template&id=1b5e5310&
-var defaultvue_type_template_id_1b5e5310_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('Nuxt')],1)}
-var defaultvue_type_template_id_1b5e5310_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./layouts/default.vue?vue&type=template&id=2d950249&
+var defaultvue_type_template_id_2d950249_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('Nuxt')}
+var defaultvue_type_template_id_2d950249_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./layouts/default.vue?vue&type=template&id=1b5e5310&
+// CONCATENATED MODULE: ./layouts/default.vue?vue&type=template&id=2d950249&
 
 // CONCATENATED MODULE: ./layouts/default.vue
 
@@ -1934,8 +1934,8 @@ function default_injectStyles (context) {
 
 var default_component = Object(componentNormalizer["a" /* default */])(
   script,
-  defaultvue_type_template_id_1b5e5310_render,
-  defaultvue_type_template_id_1b5e5310_staticRenderFns,
+  defaultvue_type_template_id_2d950249_render,
+  defaultvue_type_template_id_2d950249_staticRenderFns,
   false,
   default_injectStyles,
   null,
