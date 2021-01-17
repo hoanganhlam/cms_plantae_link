@@ -1,10 +1,11 @@
 <template>
     <div>
         <header class="py-2">
-            <div class="container mx-auto flex items-center">
-                <n-link to="/" class="flex mx-auto">
+            <div class="container px-4 md:w-2/5 mx-auto flex items-center">
+                <n-link to="/" class="flex">
                     <img class="w-6 h-6 mr-2" src="/logo.svg" alt="Plant Genealogy">
-                    <span class="font-bold text-xl">Plantae.Link</span>
+                    <span class="font-bold text-xl">Plantae.</span>
+                    <small class="text-xs">link</small>
                 </n-link>
             </div>
         </header>
@@ -27,7 +28,7 @@
                 </label>
             </div>
             <div class="mb-2 border p-4 bg-yellow-100">
-                <h4 class="mb-2 text-sm font-bold text-green-700">{{ entity ? 'Genealogy' : 'Species' }}</h4>
+                <h4 class="mb-2 text-sm font-bold text-green-700">{{ entity ? 'Genealogy' : 'Genus' }}</h4>
                 <entity v-for="(e, i) in flat_entities" :key="e.id" :entity="e"
                         :class="entity ? `ml-${8 * i}` : undefined"/>
             </div>
@@ -38,7 +39,7 @@
         </main>
         <footer class="container md:w-2/5 p-4 mx-auto">
             <div class="items-center flex">
-                <div class="text-sm"><p>plantae.link © 2021</p></div>
+                <div class="text-sm uppercase"><p>plantae.link © 2021</p></div>
                 <div class="flex ml-auto">
                     <a target="_blank" href="https://plantae.link/sitemap_index.xml" class="cursor-pointer p-2">
                         <span class="stroke-current">
@@ -59,6 +60,7 @@
 <script>
 import Entity from "@/components/Entity";
 import {debounce} from "lodash";
+
 export default {
     name: "EntityDetail",
     components: {Entity},
@@ -117,7 +119,7 @@ export default {
     computed: {
         flat_entities() {
             let entities = [
-                ...this.related,
+                ...this.related.filter(x => x.taxonomy !== 'origin'),
                 ...this.entity ? [this.entity] : []
             ];
             entities.forEach(e => e.order = this.schemas.indexOf(e.taxonomy))
@@ -137,13 +139,13 @@ export default {
             }
         }
         if (!flag) {
-            flag = "species"
+            flag = "genera"
         }
         let flags = [
             {
                 q: 'term_list',
                 p: {
-                    related_taxonomy: entity ? flag: undefined,
+                    related_taxonomy: entity ? flag : undefined,
                     related_term: entity,
                     page_size: 20,
                     taxonomy: entity ? undefined : flag,
@@ -212,9 +214,11 @@ main.container {
 .ml-16 {
     margin-left: 4rem;
 }
+
 .ml-24 {
     margin-left: 6rem;
 }
+
 .ml-32 {
     margin-left: 8rem;
 }
