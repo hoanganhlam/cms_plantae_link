@@ -10,6 +10,9 @@
                     <img src="/plant.svg" alt="">
                 </div>
             </div>
+            <div class="text-xs px-2 bg-green-500 mr-2 rounded text-white">
+                <span>{{ entity.parent ? 'sub' : '' }}{{ entity.taxonomy }}</span>
+            </div>
             <div class="flex-1">
                 <h4 class="font-bold text-sm">
                     <n-link :to="`/${entity.taxonomy}/${entity.term.slug}`">{{ entity.term.title }}</n-link>

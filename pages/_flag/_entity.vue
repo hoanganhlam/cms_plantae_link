@@ -28,13 +28,14 @@
                 </label>
             </div>
             <div class="mb-2 border p-4 bg-yellow-100">
-                <h4 class="mb-2 text-sm font-bold text-green-700">{{ entity ? 'Genealogy' : 'Genus' }}</h4>
+                <h4 class="mb-2 text-sm font-bold text-green-700">{{ entity ? 'Genealogy' : 'Phylum' }}</h4>
                 <entity v-for="(e, i) in flat_entities" :key="e.id" :entity="e"
-                        :class="entity ? `ml-${8 * i}` : undefined"/>
+                        v-if="!(e.options && e.options['is_subversion'])"
+                        :class="entity ? `ml-${8 * e.order}` : undefined"/>
             </div>
-            <div class="mb-2 border p-4" v-for="schema in schemas.slice(next_flag, 6)" :key="schema">
-                <h4 class="mb-2 text-sm font-bold text-green-700">{{ schema }}</h4>
-                <entity v-for="(e, i) in child.filter(x => x.taxonomy === schema)" :key="e.id" :entity="e"/>
+            <div class="mb-2 border p-4" v-if="end_flag">
+                <h4 class="mb-2 text-sm font-bold text-green-700 capitalize">{{ end_flag }}</h4>
+                <entity v-for="(e, i) in child.filter(x => x.taxonomy === end_flag)" :key="e.id" :entity="e"/>
             </div>
         </main>
         <footer class="container md:w-2/5 p-4 mx-auto">
@@ -59,20 +60,21 @@
 
 <script>
 import Entity from "@/components/Entity";
-import {debounce} from "lodash";
+import {debounce, uniq} from "lodash";
 
 export default {
     name: "EntityDetail",
     components: {Entity},
     data() {
         return {
-            schemas: ["phylum", "class", "order", "family", "genera", "species"],
+            schemas: ["phylum", "class", "order", "family", "genus", "species"],
             entity: null,
             related: [],
             child: [],
             next_flag: 6,
             search: null,
-            loading: false
+            loading: false,
+            end_flag: null
         }
     },
     head() {
@@ -119,10 +121,14 @@ export default {
     computed: {
         flat_entities() {
             let entities = [
-                ...this.related.filter(x => x.taxonomy !== 'origin'),
+                ...this.related.filter(x => this.schemas.includes(x.taxonomy)),
                 ...this.entity ? [this.entity] : []
             ];
             entities.forEach(e => e.order = this.schemas.indexOf(e.taxonomy))
+            entities = entities.filter((thing, index, self) =>
+                index === self.findIndex((t) => (
+                    t.id === thing.id
+                )))
             entities.sort(function (a, b) {
                 return a['order'] === b['order'] ? 0 : +(a['order'] > b['order']) || -1;
             })
@@ -139,8 +145,10 @@ export default {
             }
         }
         if (!flag) {
-            flag = "genera"
+            flag = "phylum"
         }
+        let index = this.schemas.indexOf(flag);
+        this.end_flag = this.schemas[index + 1];
         let flags = [
             {
                 q: 'term_list',
@@ -167,6 +175,19 @@ export default {
             ...entity ? [{
                 q: 'term_list',
                 p: {
+                    taxonomy: this.schemas[index],
+                    related_taxonomy: flag,
+                    related_term: entity,
+                    page_size: 500,
+                    reverse: false
+                },
+                s: ["results"],
+                o: 'term_child_0'
+            }] : [],
+            ...entity && this.end_flag ? [{
+                q: 'term_list',
+                p: {
+                    taxonomy: this.end_flag,
                     related_taxonomy: flag,
                     related_term: entity,
                     page_size: 500,
@@ -186,6 +207,7 @@ export default {
         })
         this.entity = data['term_detail']
         this.related = data['term_list']['results']
+        this.related = this.related.concat(data['term_child_0'] ? data['term_child_0']['results'] : [])
         this.child = data['term_child'] ? data['term_child']['results'] : [];
         this.loading = false;
     },
